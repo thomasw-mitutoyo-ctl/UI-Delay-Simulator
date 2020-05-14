@@ -16,6 +16,8 @@ namespace UIDelaySimulator
 
             _globalhook.MouseDownExt += GlobalHookMouseDownExt;
             _globalhook.KeyPress += GlobalHookKeyPress;
+
+            labelCurrent.Text = trkDelayMilliseconds.Value + "ms";
         }
 
         private void GlobalHookKeyPress(object sender, KeyPressEventArgs e)
@@ -61,6 +63,11 @@ namespace UIDelaySimulator
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void trkDelayMilliseconds_ValueChanged(object sender, EventArgs e)
+        {
+            labelCurrent.Text = trkDelayMilliseconds.Value + "ms";
         }
     }
 }
